@@ -1,0 +1,31 @@
+{
+  "name": "tasknode",
+  "version": "1.0.0",
+  "description": "Restful CRUD API with Node.js Express and mondodb.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Express",
+    "RestAPI",
+    "MongoDB",
+    "Mongoose",
+    "Notes"
+  ],
+  "author": "callicoder",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "formidable": "^1.2.1",
+    "jwt-simple": "^0.5.1",
+    "moment": "^2.22.0",
+    "moment-timezone": "^0.5.21",
+    "mongoose": "^5.1.2",
+    "multer": "^1.4.1",
+    "nodemailer": "^4.4.1",
+    "nodemailer-smtp-transport": "^2.7.4"
+  }
+}

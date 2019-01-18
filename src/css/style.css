@@ -1,0 +1,132 @@
+.cardsearch input {
+    outline: none;
+    border-bottom: 2px solid #eee;
+    width: 50%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #eee;
+    transition: 0.4s;
+}
+h4.book_title {
+    color: #fff;
+    text-align: center;
+}
+.row.heading {
+    justify-content: center;
+    margin: 20px 0 0;
+}
+button#refresh {
+    display: none;
+}
+a.read {
+    margin: 10px 0 -10px;
+}
+h4.title {
+    text-align: center;
+    font-size: 1.3rem;
+}
+.books {
+    margin: 62px 0;
+}
+.author {
+    text-align: center;
+    font-size: 14px;
+}
+.file_upload input[type=file]{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(20);
+    letter-spacing: 10em;     /* IE 9 fix */
+    -ms-transform: scale(20); /* IE 9 fix */
+    opacity: 0;
+    cursor: pointer
+}
+.form_group {
+    width: 370px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+form.books_add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #bf8f4ebd;
+    padding: 10px;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+form.books_add input {
+    margin: 11px 0;
+}
+
+input[type="file"] {
+    display: flex;
+    flex-direction: column;
+}
+.flex.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0;
+}
+img.viewicon {
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+button#refresh {
+    background: #995a2e;
+    color: #fff;
+    border: 1px solid #905425;
+    padding: 6px 30px 7px;
+}
+.el_card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px 0 18px;
+}
+.cardsearch input:focus {
+    outline: none;
+    border-bottom: 2px solid #dddddd;
+    	width:60%;
+}
+
+.col-lg-12.col-xs-12.flex.cardsearch {
+    display: flex;
+    justify-content: center;
+}
+
+.Cards.loaded {
+    min-height: 100vh;
+}
+.row{
+  align-items: center;
+}
+
+.cardsearch button img {
+    height: 12px;
+}
+.cardsearch button {
+    width: 40px;
+    height: 30px;
+    padding: 4px;
+    border: none;
+    background: transparent;
+    -webkit-transform: translate(-100%,-10%);
+    transform: translate(-100%,-10%);
+}
+
+
+.row.blueb {
+    padding: 20px 0 20px;
+}
