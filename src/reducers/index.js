@@ -5,6 +5,7 @@ import books from './books';
 import filterBooks from './filterBooks';
 import updateTitle from './updateTitle';
 import updateAuthor from './updateAuthor';
+import toggleForm from './toggleForm';
 import imageUploader from './imageUploader';
 
 export default combineReducers({
@@ -13,5 +14,6 @@ export default combineReducers({
   filterBooks,
   updateTitle,
   updateAuthor,
+  toggleForm,
   imageUploader,
 })

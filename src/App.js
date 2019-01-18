@@ -7,9 +7,10 @@ import Heading from './Heading.js'
 import Shelf from './img/shelf.jpg';
 import Book from './img/book.jpg';
 import ViewIcon from './img/visibility.svg';
+import AddIcon from './img/more.svg';
 
 
-const App = ({  books, imageUploader, onFindBook , onhandleSubmit, onhandleTitle,  onhandleAuthor, onImageUploader, onGetBooks, ownProps }) => {
+const App = ({  books, imageUploader, toggleForm, onFindBook,  onhandleSubmit, onToggleForm, onhandleTitle,  onhandleAuthor, onImageUploader, onGetBooks, ownProps }) => {
   let searchInput = '';
   let title = '';
   let author = '';
@@ -17,25 +18,21 @@ const App = ({  books, imageUploader, onFindBook , onhandleSubmit, onhandleTitle
 
   const handleSubmit = (event) => {
       event.preventDefault();
-      // console.log('ownProps', ownProps);
-      // console.log('imageUploader', imageUploader);
-      let data = {
+      onhandleSubmit(JSON.stringify({
         title : title.value,
         author : author.value,
         bookfile : imageUploader,
-      }
-        console.log('SENDING DATA HANDLESUBMIT', data);
-      onhandleSubmit(JSON.stringify(data))
+      }))
     }
 
 
-    const readFile = (event) => {
-      onImageUploader(event.target.files[0])
-      event.preventDefault();
+    const readFile = (ev) => {
+      onImageUploader(ev.target.files[0])
+      ev.preventDefault();
     }
 
 
-
+    const toggleFormBox = (ev, value) =>{ onToggleForm(value) }
   const updateTitle = () => { onhandleTitle( title.value) }
   const updateAuthor = () => { onhandleAuthor( author.value) }
   const findBook = () => { onFindBook(searchInput.value) }
@@ -72,7 +69,9 @@ const App = ({  books, imageUploader, onFindBook , onhandleSubmit, onhandleTitle
             </div>
         )}
         </div>
-        <form className="books_add" onSubmit={handleSubmit}>
+        <div  className={toggleForm ? 'toggled form_box' : 'untoggled form_box'}>
+        <form className='books_add' onSubmit={handleSubmit}>
+        <div className="add_icon"><img onClick={(ev) => toggleFormBox(ev, toggleForm)} className="addicon" src={AddIcon} /></div>
             <div className="form_group">
               <label> Title</label>
               <input name="title" type="text"  ref={(input) => { title = input}} onChange={updateTitle}/>
@@ -92,6 +91,7 @@ const App = ({  books, imageUploader, onFindBook , onhandleSubmit, onhandleTitle
             </div>
         </form>
         </div>
+        </div>
         <div className="flex center">
          <button id="refresh" onClick={onGetBooks}>Refresh</button>
          </div>
@@ -102,6 +102,7 @@ export default connect(
   (state, ownProps) => ({
     books: state.books .filter( book => book.title.toLowerCase().includes(state.filterBooks.toLowerCase()) || book.author.toLowerCase().includes(state.filterBooks.toLowerCase())),
     imageUploader: state.imageUploader,
+    toggleForm: state.toggleForm,
   ownProps
   }),
   dispatch => ({
@@ -119,6 +120,9 @@ export default connect(
     },
     onGetBooks: () => {
         dispatch(getBooks())
+    },
+    onToggleForm: (value) => {
+      dispatch({ type: 'TOGGLE_FORM', payload: value})
     },
     onImageUploader: (data) => {
         dispatch(imageUploader(data))
