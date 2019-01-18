@@ -2,19 +2,19 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Menu } from './Menu';
 
-const Card = ({card}) => {
+const Card = ({book}) => {
 return (
   <div>
   <Menu />
-  {card.task}
+  {book.title}
   </div>
 )
 }
 
-// Catch error when a card is not found
+// Catch error when a book is not found
 const mapStateToProps =(state, ownProps) => {
   return {
-    card: state.cards.find(card => Number(card.id) === Number(ownProps.match.params.id))
+    book: state.books.find(book => Number(book.id) === Number(ownProps.match.params.id))
   }
 };
 export default connect(mapStateToProps)(Card)

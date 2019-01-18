@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getCards } from './actions/getcards';
+import { getBooks } from './actions/getbooks';
 import { imageUploader } from './actions/imageUploader';
 import './cssfiles.js'
 import Heading from './Heading.js'
@@ -9,7 +9,7 @@ import Book from './img/book.jpg';
 import ViewIcon from './img/visibility.svg';
 
 
-const App = ({  cards, imageUploader, onFindCard , onhandleSubmit, onhandleTitle,  onhandleAuthor, onImageUploader, onGetCards, ownProps }) => {
+const App = ({  books, imageUploader, onFindBook , onhandleSubmit, onhandleTitle,  onhandleAuthor, onImageUploader, onGetBooks, ownProps }) => {
   let searchInput = '';
   let title = '';
   let author = '';
@@ -38,7 +38,7 @@ const App = ({  cards, imageUploader, onFindCard , onhandleSubmit, onhandleTitle
 
   const updateTitle = () => { onhandleTitle( title.value) }
   const updateAuthor = () => { onhandleAuthor( author.value) }
-  const findCard = () => { onFindCard(searchInput.value) }
+  const findBook = () => { onFindBook(searchInput.value) }
   let shelf_Style = (a) => {return { backgroundSize: "cover",display: "block",minHeight: "100vh",overflowX: "hidden",height: "100%", backgroundImage: "url(" +Shelf+ ")" }}
   let book_Style = (a) => {return { backgroundSize: "cover",display: "flex",minHeight: "209px",width: "148px",overflowX: "hidden",height: "100%", backgroundImage: "url(" +Book+ ")" }}
 
@@ -46,32 +46,27 @@ const App = ({  cards, imageUploader, onFindCard , onhandleSubmit, onhandleTitle
 
   let text_Style = () => {return { color: "#fff" }}
       return (
-      <div className="Cards" style={shelf_Style(Shelf)}>
+      <div className="Books" style={shelf_Style(Shelf)}>
           <Heading />
         <div className="fields" >
           <div className="row blueb">
               <div className="container">
-                <div className="col-lg-12 col-xs-12 flex cardsearch">
-                  <input type="text" onChange={findCard} ref={(input) => { searchInput = input}} />
+                <div className="col-lg-12 col-xs-12 flex booksearch">
+                  <input type="text" onChange={findBook} ref={(input) => { searchInput = input}} />
                 </div>
               </div>
           </div>
         </div>
         <div className="container">
         <div className="row books">
-          {cards.map((card, index) =>
+          {books.map((book, index) =>
             <div key={index} className="col-md-2 col-sm-6">
               <div>
-
-              <div className="el_card" style={book_Style(card.bookfile)}>
-                        <h4 className="title" style={text_Style()}>{card.title}</h4>
-                        <div className="author" style={text_Style()}>{card.author}</div>
-                        <div className="author" style={text_Style()}>{}</div>
-
-<a className="read" href={`${card.bookfile}`} target="_blank">
-<img  className="viewicon" src={ViewIcon} />
-</a>
-
+              <div className="el_book" style={book_Style(book.bookfile)}>
+                  <h4 className="title" style={text_Style()}>{book.title}</h4>
+                  <div className="author" style={text_Style()}>{book.author}</div>
+                  <div className="author" style={text_Style()}>{}</div>
+                  <a className="read" href={`${book.bookfile}`} target="_blank"> <img  className="viewicon" src={ViewIcon} /> </a>
               </div>
             </div>
             </div>
@@ -88,29 +83,29 @@ const App = ({  cards, imageUploader, onFindCard , onhandleSubmit, onhandleTitle
             </div>
             <div className="form_group">
               <label> bookfile</label>
-              <input id="fileupload" name="bookfile" type="file" accept="image/*"  ref={(input) => { }}
+              <input id="fileupload" name="bookfile" placeholder="Choose a file" type="file" accept="image/*"  ref={(input) => { }}
                onChange={(event)=> { readFile(event) }} onClick={(event)=> { event.target.value = null }} />
             </div>
             <div className="form_group">
               <label> submit</label>
-              <input type="submit" placeholder="submit"/>
+              <input type="submit" value="submit"/>
             </div>
         </form>
         </div>
         <div className="flex center">
-         <button id="refresh" onClick={onGetCards}>Refresh</button>
+         <button id="refresh" onClick={onGetBooks}>Refresh</button>
          </div>
       </div>
     )
 }
 export default connect(
   (state, ownProps) => ({
-    cards: state.cards .filter( card => card.title.toLowerCase().includes(state.filterCards.toLowerCase()) ),
+    books: state.books .filter( book => book.title.toLowerCase().includes(state.filterBooks.toLowerCase()) || book.author.toLowerCase().includes(state.filterBooks.toLowerCase())),
     imageUploader: state.imageUploader,
   ownProps
   }),
   dispatch => ({
-    onFindCard : (payload) => {
+    onFindBook : (payload) => {
       dispatch({ type: 'FIND_BOOK', payload: payload})
     },
     onhandleSubmit : (data) => {
@@ -122,8 +117,8 @@ export default connect(
     onhandleAuthor: (data) => {
         dispatch({ type: 'UPDATE_AUTHOR', payload: data})
     },
-    onGetCards: () => {
-        dispatch(getCards())
+    onGetBooks: () => {
+        dispatch(getBooks())
     },
     onImageUploader: (data) => {
         dispatch(imageUploader(data))

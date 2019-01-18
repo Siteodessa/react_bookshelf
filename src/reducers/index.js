@@ -1,16 +1,16 @@
 import { combineReducers } from 'redux';
 import { routerReducer as routing } from 'react-router-redux';
 
-import cards from './cards';
-import filterCards from './filterCards';
+import books from './books';
+import filterBooks from './filterBooks';
 import updateTitle from './updateTitle';
 import updateAuthor from './updateAuthor';
 import imageUploader from './imageUploader';
 
 export default combineReducers({
   routing,
-  cards,
-  filterCards,
+  books,
+  filterBooks,
   updateTitle,
   updateAuthor,
   imageUploader,

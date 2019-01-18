@@ -6,28 +6,24 @@ import thunk from 'redux-thunk';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import App from './App';
-import About from './About';
 import {  Route , HashRouter  } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory'
 import { syncHistoryWithStore } from 'react-router-redux';
-import Card from './Card'
+import BookApp from './BookApp';
+import { getBooks } from './actions/getbooks';
 
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
-const history = syncHistoryWithStore(createHistory(), store)
 
 
 ReactDOM.render(
           <Provider store={store}>
             <HashRouter>
             <div>
-            <Route exact path="/" component={App} />
-            <Route path="/about" component={About} />
-            <Route path="/cards/:id" component={Card} />
+            <Route exact path="/" component={BookApp} />
             </div>
           </HashRouter>
           </Provider>,
 document.getElementById('root'))
-document.getElementById('refresh').click()
 registerServiceWorker();
+store.dispatch(getBooks())

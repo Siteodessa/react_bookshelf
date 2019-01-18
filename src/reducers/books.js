@@ -1,4 +1,3 @@
-import getCards from  '../actions/getcards'
 
 const initialState = [
 {
@@ -26,7 +25,7 @@ if (response.status !== 200) throw Error(body.message);
 
 
 
-export default function cards(state = initialState, action) {
+export default function books(state = initialState, action) {
   if (action.type === 'ADD_BOOK') {
     callApiPost(JSON.parse(action.payload))
     return [...state, JSON.parse(action.payload)]

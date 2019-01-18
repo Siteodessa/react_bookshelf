@@ -4002,7 +4002,7 @@ tbody.collapse.show {
     color: #fff
 }
 
-.card {
+.book {
     position: relative;
     display: -ms-flexbox;
     display: flex;
@@ -4016,86 +4016,86 @@ tbody.collapse.show {
     border-radius: .25rem
 }
 
-.card>hr {
+.book>hr {
     margin-right: 0;
     margin-left: 0
 }
 
-.card>.list-group:first-child .list-group-item:first-child {
+.book>.list-group:first-child .list-group-item:first-child {
     border-top-left-radius: .25rem;
     border-top-right-radius: .25rem
 }
 
-.card>.list-group:last-child .list-group-item:last-child {
+.book>.list-group:last-child .list-group-item:last-child {
     border-bottom-right-radius: .25rem;
     border-bottom-left-radius: .25rem
 }
 
-.card-body {
+.book-body {
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
     padding: 1.25rem
 }
 
-.card-title {
+.book-title {
     margin-bottom: .75rem
 }
 
-.card-subtitle {
+.book-subtitle {
     margin-top: -.375rem;
     margin-bottom: 0
 }
 
-.card-text:last-child {
+.book-text:last-child {
     margin-bottom: 0
 }
 
-.card-link:hover {
+.book-link:hover {
     text-decoration: none
 }
 
-.card-link+.card-link {
+.book-link+.book-link {
     margin-left: 1.25rem
 }
 
-.card-header {
+.book-header {
     padding: .75rem 1.25rem;
     margin-bottom: 0;
     background-color: rgba(0,0,0,.03);
     border-bottom: 1px solid rgba(0,0,0,.125)
 }
 
-.card-header:first-child {
+.book-header:first-child {
     border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0
 }
 
-.card-header+.list-group .list-group-item:first-child {
+.book-header+.list-group .list-group-item:first-child {
     border-top: 0
 }
 
-.card-footer {
+.book-footer {
     padding: .75rem 1.25rem;
     background-color: rgba(0,0,0,.03);
     border-top: 1px solid rgba(0,0,0,.125)
 }
 
-.card-footer:last-child {
+.book-footer:last-child {
     border-radius: 0 0 calc(.25rem - 1px) calc(.25rem - 1px)
 }
 
-.card-header-tabs {
+.book-header-tabs {
     margin-right: -.625rem;
     margin-bottom: -.75rem;
     margin-left: -.625rem;
     border-bottom: 0
 }
 
-.card-header-pills {
+.book-header-pills {
     margin-right: -.625rem;
     margin-left: -.625rem
 }
 
-.card-img-overlay {
+.book-img-overlay {
     position: absolute;
     top: 0;
     right: 0;
@@ -4104,43 +4104,43 @@ tbody.collapse.show {
     padding: 1.25rem
 }
 
-.card-img {
+.book-img {
     width: 100%;
     border-radius: calc(.25rem - 1px)
 }
 
-.card-img-top {
+.book-img-top {
     width: 100%;
     border-top-left-radius: calc(.25rem - 1px);
     border-top-right-radius: calc(.25rem - 1px)
 }
 
-.card-img-bottom {
+.book-img-bottom {
     width: 100%;
     border-bottom-right-radius: calc(.25rem - 1px);
     border-bottom-left-radius: calc(.25rem - 1px)
 }
 
-.card-deck {
+.book-deck {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column
 }
 
-.card-deck .card {
+.book-deck .book {
     margin-bottom: 15px
 }
 
 @media (min-width: 576px) {
-    .card-deck {
+    .book-deck {
         -ms-flex-flow:row wrap;
         flex-flow: row wrap;
         margin-right: -15px;
         margin-left: -15px
     }
 
-    .card-deck .card {
+    .book-deck .book {
         display: -ms-flexbox;
         display: flex;
         -ms-flex: 1 0 0%;
@@ -4153,96 +4153,96 @@ tbody.collapse.show {
     }
 }
 
-.card-group {
+.book-group {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column
 }
 
-.card-group .card {
+.book-group .book {
     margin-bottom: 15px
 }
 
 @media (min-width: 576px) {
-    .card-group {
+    .book-group {
         -ms-flex-flow:row wrap;
         flex-flow: row wrap
     }
 
-    .card-group .card {
+    .book-group .book {
         -ms-flex: 1 0 0%;
         flex: 1 0 0%;
         margin-bottom: 0
     }
 
-    .card-group .card+.card {
+    .book-group .book+.book {
         margin-left: 0;
         border-left: 0
     }
 
-    .card-group .card:first-child {
+    .book-group .book:first-child {
         border-top-right-radius: 0;
         border-bottom-right-radius: 0
     }
 
-    .card-group .card:first-child .card-img-top {
+    .book-group .book:first-child .book-img-top {
         border-top-right-radius: 0
     }
 
-    .card-group .card:first-child .card-img-bottom {
+    .book-group .book:first-child .book-img-bottom {
         border-bottom-right-radius: 0
     }
 
-    .card-group .card:last-child {
+    .book-group .book:last-child {
         border-top-left-radius: 0;
         border-bottom-left-radius: 0
     }
 
-    .card-group .card:last-child .card-img-top {
+    .book-group .book:last-child .book-img-top {
         border-top-left-radius: 0
     }
 
-    .card-group .card:last-child .card-img-bottom {
+    .book-group .book:last-child .book-img-bottom {
         border-bottom-left-radius: 0
     }
 
-    .card-group .card:only-child {
+    .book-group .book:only-child {
         border-radius: .25rem
     }
 
-    .card-group .card:only-child .card-img-top {
+    .book-group .book:only-child .book-img-top {
         border-top-left-radius: .25rem;
         border-top-right-radius: .25rem
     }
 
-    .card-group .card:only-child .card-img-bottom {
+    .book-group .book:only-child .book-img-bottom {
         border-bottom-right-radius: .25rem;
         border-bottom-left-radius: .25rem
     }
 
-    .card-group .card:not(:first-child):not(:last-child):not(:only-child) {
+    .book-group .book:not(:first-child):not(:last-child):not(:only-child) {
         border-radius: 0
     }
 
-    .card-group .card:not(:first-child):not(:last-child):not(:only-child) .card-img-bottom,.card-group .card:not(:first-child):not(:last-child):not(:only-child) .card-img-top {
+    .book-group .book:not(:first-child):not(:last-child):not(:only-child) .book-img-bottom,.book-group .book:not(:first-child):not(:last-child):not(:only-child) .book-img-top {
         border-radius: 0
     }
 }
 
-.card-columns .card {
+.book-columns .book {
     margin-bottom: .75rem
 }
 
 @media (min-width: 576px) {
-    .card-columns {
+    .book-columns {
         -webkit-column-count:3;
         column-count: 3;
         -webkit-column-gap: 1.25rem;
         column-gap: 1.25rem
     }
 
-    .card-columns .card {
+    .book-columns .book {
         display: inline-block;
         width: 100%
     }

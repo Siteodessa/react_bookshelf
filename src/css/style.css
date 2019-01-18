@@ -1,4 +1,4 @@
-.cardsearch input {
+.booksearch input {
     outline: none;
     border-bottom: 2px solid #eee;
     width: 50%;
@@ -32,6 +32,13 @@ h4.title {
     text-align: center;
     font-size: 14px;
 }
+input[type="submit"] {
+    background: #411f1e;
+    width: 100px;
+    color: #fff;
+    border: none;
+    padding: 5px;
+}
 .file_upload input[type=file]{
     position: absolute;
     left: 0;
@@ -45,10 +52,11 @@ h4.title {
     cursor: pointer
 }
 .form_group {
-    width: 370px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  height: 40px;
+  width: 370px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
 }
 form.books_add {
     display: flex;
@@ -62,14 +70,44 @@ form.books_add {
     left: 0;
     bottom: 0;
 }
+input[type="file"] {
+  height: 40px;
+    outline:none}
+input[type="file"]::-webkit-file-upload-button {
+    visibility: hidden;
+}
 
-form.books_add input {
-    margin: 11px 0;
+input[type="file"]:before {
+    content: 'Browse';
+    display: inline-block;
+    background: linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+}
+
+input[type="file"]:hover:before {
+    border-color: black;
+}
+
+input[type="file"]:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+label{
+  margin: 0
 }
 
 input[type="file"] {
     display: flex;
     flex-direction: column;
+    width: 130px;
 }
 .flex.center {
     display: flex;
@@ -88,35 +126,35 @@ button#refresh {
     border: 1px solid #905425;
     padding: 6px 30px 7px;
 }
-.el_card {
+.el_book {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin: 0px 0 18px;
 }
-.cardsearch input:focus {
+.booksearch input:focus {
     outline: none;
     border-bottom: 2px solid #dddddd;
     	width:60%;
 }
 
-.col-lg-12.col-xs-12.flex.cardsearch {
+.col-lg-12.col-xs-12.flex.booksearch {
     display: flex;
     justify-content: center;
 }
 
-.Cards.loaded {
+.books.loaded {
     min-height: 100vh;
 }
 .row{
   align-items: center;
 }
 
-.cardsearch button img {
+.booksearch button img {
     height: 12px;
 }
-.cardsearch button {
+.booksearch button {
     width: 40px;
     height: 30px;
     padding: 4px;
